@@ -4,41 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>我的冒險日誌 - 哇哈哈</title>
     <link href="style.css" rel="stylesheet">
-
 </head>
 
 <body>
 
-    <div class="a" id="wrap">
+    <div class="container">
         
-        <h1>哇哈哈</h1>
         <header>
-            <nav>
+            <h1>哇哈哈的神秘空間</h1>
+            <nav class="main-nav">
                 <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">Draw</a></li>
-                <li><a href="#">Snake</a></li>
-                <li><a href="#">SNS</a></li>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">Draw</a></li>
+                    <li><a href="#">Snake</a></li>
+                    <li><a href="#">SNS</a></li>
                 </ul>
             </nav>
-            </header>
+        </header>
 
-        <h2>哈哈</h2>
-        <img src="龍皓晨.jpg" width="500">
-        <br><img src="img/聖采兒.jpg"width=500>
-        <br><img src="img/楓秀.webp" width="500">
-    <a href="https://www.bdsh.ntpc.edu.tw/">我是你哈哈</a>
-    <a href="nnn.html">嫩</a>
+        <h2>冒險者圖鑑</h2>
 
-        <h2>Abandon </h2>
-    
+        <div id="wrap">
+            
+            <section class="gallery">
+                <div class="img-card"><img src="龍皓晨.jpg" alt="龍皓晨"><p>龍皓晨</p></div>
+                <div class="img-card"><img src="img/聖采兒.jpg" alt="聖采兒"><p>聖采兒</p></div>
+                <div class="img-card"><img src="img/楓秀.webp" alt="楓秀"><p>楓秀</p></div>
+            </section>
+
+            <aside>
+                <nav class="info-box">
+                    <h2>我的最愛清單</h2>
+                    <ul>
+                        <li><a href="#">⭐ 療癒系：水豚</a></li>
+                        <li><a href="#">🎨 創作：插畫</a></li>
+                        <li><a href="#">🎮 遊戲：貪食蛇</a></li>
+                        <li><a href="#">🍜 食物：拉麵</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="info-box status-box">
+                    <h2>目前狀態</h2>
+                    <ul>
+                        <li>正在努力學習：<strong>Flexbox 佈局</strong></li>
+                        <li>目前心情：☕ 咖啡因補充中</li>
+                        <li>
+                            <div class="quote-section">
+                                <h3>本週金句</h3>
+                                <blockquote>「程式碼是我的畫筆。」</blockquote>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+
+        <div class="external-links">
+            <a href="https://www.bdsh.ntpc.edu.tw/" target="_blank">我是你哈哈</a>
+            <a href="nnn.html" class="btn-alt">回上一頁</a>
+        </div>
+
+        <hr>
+
+        <section class="spirit-rings">
+            <h2>武魂：藍銀草</h2>
+            <div class="ring-list">
+                <h4 class="ring-1">第一魂技：纏繞</h4>
+                <h4 class="ring-2">第二魂技：寄生</h4>
+                <h4 class="ring-3">第三魂技：蛛網束縛</h4>
+                <h4 class="ring-4">第四魂技：藍銀囚籠</h4>
+                <h4 class="ring-5">第五魂技：藍銀霸王槍</h4>
+            </div>
+        </section>
+        
     </div>
 
     <a href="#wrap" id="top">TOP</a>
 
 </body>
-
 </html>

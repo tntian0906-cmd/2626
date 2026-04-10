@@ -1,101 +1,184 @@
-@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+/* 引入字體 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Lavishly+Yours&display=swap');
 
+/* 定義全域變數，方便統一管理配色 */
+:root {
+    --primary-color: #a06239;
+    --accent-color: #ff23ff;
+    --bg-light: #fdf6ff;
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 基本頁面設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    background-color: #ffffff;
+    background-image: url(https://i.imgur.com/0C1CQ84.png);
+    background-repeat: repeat-x;
+    color: #333;
+}
+
+/* 主容器 */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: rgba(221, 138, 240, 0.85); /* 半透明紫色背景 */
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* 標題樣式 */
 h1 {
-    color: #000000; /* 深藍灰色文字 */
-    font-family: "Microsoft JhengHei", sans-serif; /* 字體 */
-    font-size: 36px; /* 字體大小 */
-    text-align: center; /* 文字置中 */
-    background-color: #ecf0f1; /* 淺灰色背景 */
-    padding: 20px; /* 內邊距 20px */
-    border-bottom: 3px solid #414141; /* 底部加一條藍色實線 */
-    letter-spacing: 2px; /* 字元間距 */
-    text-shadow: 1px 1px 2px #bdc3c7; /* 加上淡淡的文字陰影 */
-  }
-  /* 對 p 段落的設定 */
-  p {
-    color: #34495e; /* 較深的灰色文字 */
-    font-size: 16px; /* 字體大小 */
-    line-height: 1.6; /* 1.6倍的行高，讓閱讀更舒適 */
-    width: 80%; /* 寬度為外層容器的 80% */
-    margin: 20px auto; /* 上下外邊距 20px，左右自動 (實現置中效果) */
-    padding: 15px; /* 內邊距 15px */
-    border: 1px dashed #7f8c8d; /* 1px 灰色虛線邊框 */
-    border-radius: 8px; /* 8px 的圓角 */
-    box-shadow: 0 4px 8px rgba(56, 56, 56, 0.1); /* 加上淡淡的區塊陰影 */
-  }
-
-
-h2{
-	font-family: "Lavishly Yours", cursive;
-    color: #000000;
-	border: #94c8b1 1px dotted;
-	border-left: #d0e35b 10px solid;
-	padding: 5px 20px;
-	margin-bottom: 0;
+    color: #2c3e50;
+    font-size: 42px;
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-body{
-	background-color: #ffffff;
-	background-image: url(https://i.imgur.com/0C1CQ84.png);
-	background-repeat: repeat-x;
+/* 導覽列美化 */
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+    border-top: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    background: var(--glass-bg);
+    gap: 30px; /* 項目間距 */
 }
 
-
-
-
-a:link,a:visited
-{
-
-	color:#FFFFFF;
-	background-color:#ff23ff;
-	text-align:center;
-	padding:6px;
-	text-decoration:none;
-	border-radius: 25px ;
+.main-nav ul li a {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: 0.3s; /* 平滑過渡動畫 */
+    background: none; /* 移除原本預設的紫色背景 */
+    padding: 5px 10px;
 }
 
-a:hover,a:active
-{
-	background-color:#7A991A;
-	border-radius: 25px ;
-}
-:root{
-    --gold:#d4af37;
-    --rose:#ff6fa3;
-    --deep:#2b1b3a;
-    --glass: rgba(255,255,255,0.06);
-    --glow: 0 10px 30px rgba(212,175,55,0.18);
+.main-nav ul li a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px); /* 懸浮微動效 */
 }
 
-.a{
-margin:20px 0;
-padding:35px 30px 30px 30px;
-background-color:#dd8af0;
+/* 內容區 Flex 佈局 */
+#wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
 }
 
-#top
-{
-	position:fixed;
-	bottom:5px;
-	right:5px;
+/* 圖片展示卡片化 */
+.gallery {
+    flex: 2; /* 佔據較多空間 */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-header nav ul {
-  display: flex;
-  justify-content: center;
-  border-top: 2px solid #7c5d48;
-  border-bottom: 2px solid #7c5d48;
-  background-color: rgba(255,255,255,0.42);
-  padding: 12px 0px 10px;
+.img-card {
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: 0.3s;
 }
-header nav ul li {
-  margin: 0 20px;
+
+.img-card:hover {
+    transform: scale(1.05);
 }
-header nav ul li a {
-  font-size: 22px;
-  font-weight: bold;
-  color: #a06239;
+
+.img-card img {
+    border-radius: 8px;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
-header nav ul li a:hover {
-  text-decoration: underline double;
+
+/* 側邊資訊欄 */
+aside {
+    flex: 1; /* 佔據較少空間 */
+}
+
+.info-box {
+    border-radius: 16px;
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(5px); /* 毛玻璃效果 */
+    box-shadow: var(--shadow);
+    padding: 20px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-box li {
+    margin-bottom: 12px;
+}
+
+/* 鏈結按鈕樣式 */
+a:link, a:visited {
+    color: #FFFFFF;
+    background-color: var(--accent-color);
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: #7A991A;
+    box-shadow: 0 4px 12px rgba(122, 153, 26, 0.4);
+}
+
+/* 魂環特殊設計 */
+.spirit-rings h4 {
+    margin: 10px 0;
+    border-left: 10px solid;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 0 10px 10px 0;
+}
+
+.ring-1 { border-color: #ffff00; } /* 黃色魂環 */
+.ring-2 { border-color: #ffff00; }
+.ring-3 { border-color: #7f00ff; } /* 紫色魂環 */
+.ring-4 { border-color: #7f00ff; }
+.ring-5 { border-color: #000000; } /* 黑色魂環 */
+
+/* TOP 按鈕固定位置 */
+#top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: bold;
+    z-index: 100;
+}
+
+/* 響應式設定：手機瀏覽時垂直排列 */
+@media (max-width: 768px) {
+    #wrap {
+        flex-direction: column;
+    }
+    .container {
+        padding: 15px;
+    }
 }
